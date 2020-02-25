@@ -378,7 +378,7 @@ function () {
   return Flow;
 }();
 
-___$insertStyle(".connection {\n  overflow: visible !important;\n  position: absolute;\n  z-index: -1;\n  pointer-events: none; }\n  .connection > * {\n    pointer-events: all; }\n  .connection .main-path {\n    fill: none;\n    stroke-width: 5px;\n    stroke: steelblue; }\n  .connection .expression-path {\n    fill: none;\n    stroke-width: 5px;\n    stroke: yellow; }\n");
+___$insertStyle(".connection {\n  overflow: visible !important;\n  position: absolute;\n  z-index: -1;\n  pointer-events: none; }\n  .connection > * {\n    pointer-events: all; }\n  .connection .main-path {\n    fill: none;\n    stroke-width: 5px;\n    stroke: steelblue; }\n  .connection .expression-path {\n    fill: none;\n    stroke-width: 5px;\n    stroke: #00FF00; }\n");
 
 function install(editor) {
   editor.bind('connectionpath');
