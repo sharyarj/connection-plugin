@@ -44,11 +44,14 @@ export function renderConnection({ el, d, connection }: { el: HTMLElement, d: st
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
     const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
 
-    console.log(connection!.output.socket.name);
-    console.log(connection!.output.node!.outputs.keys());
+
 
     svg.classList.add('connection', ...classed);
-    path.classList.add('main-path');
+    if (connection!.output.socket.name == 'Expression') {
+        path.classList.add('expression-path');
+    } else {
+        path.classList.add('main-path');
+    }
     path.setAttribute('d', d);
 
     svg.appendChild(path);
