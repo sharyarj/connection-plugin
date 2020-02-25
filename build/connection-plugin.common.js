@@ -146,7 +146,7 @@ function renderConnection(_ref2) {
   var classed = !connection ? [] : ['input-' + toTrainCase(connection.input.name), 'output-' + toTrainCase(connection.output.name), 'socket-input-' + toTrainCase(connection.input.socket.name), 'socket-output-' + toTrainCase(connection.output.socket.name)];
   var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-  console.log(connection.output);
+  console.log(Object.keys(connection.output.node.outputs));
 
   (_svg$classList = svg.classList).add.apply(_svg$classList, ['connection'].concat(classed));
 

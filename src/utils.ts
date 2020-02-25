@@ -45,7 +45,7 @@ export function renderConnection({ el, d, connection } : { el: HTMLElement, d: s
     const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
 
 
-    console.log(connection!.output);
+    console.log(Object.keys(connection!.output.node!.outputs));
 
     svg.classList.add('connection', ...classed);
     path.classList.add('main-path');
