@@ -19,13 +19,13 @@ export function defaultPath(points: number[], curvature: number) {
 
 export function renderPathData(emitter: Emitter<EventsTypes>, points: number[], connection?: Connection) {
     const data = { points, connection, d: '' };
-    
+
     emitter.trigger('connectionpath', data);
-    
+
     return data.d || defaultPath(points, 0.4);
 }
 
-export function updateConnection({ el, d } : { el: HTMLElement, d: string }) {
+export function updateConnection({ el, d }: { el: HTMLElement, d: string }) {
     const path = el.querySelector('.connection path');
 
     if (!path) throw new Error('Path of connection was broken');
@@ -33,8 +33,8 @@ export function updateConnection({ el, d } : { el: HTMLElement, d: string }) {
     path.setAttribute('d', d);
 }
 
-export function renderConnection({ el, d, connection } : { el: HTMLElement, d: string, connection?: Connection }) {
-    const classed = !connection?[]:[
+export function renderConnection({ el, d, connection }: { el: HTMLElement, d: string, connection?: Connection }) {
+    const classed = !connection ? [] : [
         'input-' + toTrainCase(connection.input.name),
         'output-' + toTrainCase(connection.output.name),
         'socket-input-' + toTrainCase(connection.input.socket.name),
@@ -44,7 +44,7 @@ export function renderConnection({ el, d, connection } : { el: HTMLElement, d: s
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
     const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
 
-
+    console.log(connection!.output.socket.name);
     console.log(connection!.output.node!.outputs.keys());
 
     svg.classList.add('connection', ...classed);
