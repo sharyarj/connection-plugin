@@ -22,7 +22,7 @@ export function renderPathData(emitter: Emitter<EventsTypes>, points: number[], 
 
     emitter.trigger('connectionpath', data);
 
-    return data.d || defaultPath(points, 0.6);
+    return data.d || defaultPath(points, 0.4);
 }
 
 export function updateConnection({ el, d }: { el: HTMLElement, d: string }) {
